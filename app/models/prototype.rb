@@ -1,6 +1,6 @@
 class Prototype < ApplicationRecord
   belongs_to :user
-  has_many :comments  # commentsテーブルとのアソシエーション
+  has_many :comments, dependent: :destroy   # commentsテーブルとのアソシエーション
   has_one_attached :image
   validates :image, presence: true
   validates :title, presence: true
